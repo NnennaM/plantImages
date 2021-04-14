@@ -1,3 +1,46 @@
+/* index.html */
+
 .guarantee-section {
   padding: 6rem 0;
+}
+
+.footer-container {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}
+
+/* plantCare.html */
+.img-container {
+  width: 100%;
+  height: 500px;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img-container {
+  height: 300px;
+  width: 100%;
+}
+
+.card-img-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.read-blog-section {
+  margin: 4rem;
+}
+
+/* Shop.html */
+.cart {
+  margin-top: 0.2rem;
 }
