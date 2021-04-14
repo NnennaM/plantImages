@@ -159,7 +159,7 @@
                          <a class="nav-link" href="cart.html">Cart</a><a href="cart.html"></a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="#">Account</a>
+                         <a class="nav-link" href="login.html">Login</a>
                     </li>
                 </ul>
             </div>
@@ -324,19 +324,20 @@
                 <h5 class="font-weight-bold">£145.95</h5>
               </li>
             </ul>
-			<!--<button class="btn btn-dark rounded-pill py-2 btn-block" type="button" onclick="document.getElementById('id01')"><i class="fa fa-shopping-cart mr-2"></i>Procceed to checkout</button>-->
+			<a class="btn btn-dark rounded-pill py-2 btn-block" type="button" href="login.html"><i class="fa fa-shopping-cart mr-2"></i>Procceed to checkout</a>
 			
-			<!-- Button to open the modal login form -->
+			<!-- Button to open the modal login form 
 			<div class="container">
                  <button type="button" class="btn btn-dark rounded-pill py-2 btn-block" data-toggle="modal" data-target="#loginModal"><i class="fa fa-shopping-cart mr-2"></i>Procceed to checkout</button>
-             </div>
+             </div>-->
           </div>
         </div>
       </div>
 	  
-	  
-	  
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  </div>
+</div>  
+<!--<div class= "container">
+	  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header border-bottom-0">
@@ -384,9 +385,7 @@
   </div>
 </div>  
 	 </div>
-  </div>
-</div>  
-	  
+	 </div>-->
 	  
 	  
 	  
@@ -395,6 +394,7 @@
 <button onclick="document.getElementById('id01').style.display='block'">Login</button>
 
 <!-- The Modal --
+<div class= "container">
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'"
    class="close" title="Close Modal">&times;</span>
@@ -423,7 +423,8 @@
       <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
   </form>
-</div> -->
+</div> 
+</div>-->
 
    
 
@@ -489,7 +490,7 @@
      </footer>	 
 	 <script>
 	     
-/* Get the modal
+ //Get the modal
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -497,13 +498,15 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}*/
+}
 
+
+/*
 $(document).ready(function() {             $('#loginModal').modal('show');
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
-});
+});*/
 
 	 
 	 </script>
