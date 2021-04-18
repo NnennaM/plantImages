@@ -50,7 +50,7 @@ function calculateTotal(data) {
   let approximateTaxTotal = taxTotal.toFixed(2);
   tax.textContent = `\u20AC${approximateTaxTotal}`;
 
-  let overallTotal = subTotal + approximateTaxTotal;
+  let overallTotal = (subTotal + taxTotal).toFixed(2);
 
   total.textContent = overallTotal;
 }
