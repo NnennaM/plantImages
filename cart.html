@@ -18,46 +18,7 @@
                   background: linear-gradient(to right, #f2f2f2, #ffffff);
                   min-height: 100vh;
             }
-			/* /* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5px auto; /* 15% from the top and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-  /* Position it in the top right corner outside of the modal */
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-/* Close button on hover */
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
 
 /* Add Zoom Animation */
 .animate {
@@ -174,16 +135,16 @@
   </div>
   <!-- End -->
 
-  <div class="pb-5">
+  <div class="">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+        <div class="col-lg-6 p-5 bg-white rounded shadow-sm mb-5 mr-2">
 
           <!-- Shopping cart table -->
           <div class="table-responsive">
             <table class="table">
               <thead>
-                <tr>
+                <tr class="text-center">
                   <th scope="col" class="border-0 bg-light">
                     <div class="p-2 px-3 text-uppercase">Product</div>
                   </th>
@@ -199,7 +160,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <!-- <tr>
                   <th scope="row" class="border-0">
                     <div class="p-2">
                       <img src="Images/bamboo.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
@@ -238,106 +199,65 @@
                     <td class="align-middle"><strong>1</strong></td>
                     <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
                     </td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>
           <!-- End -->
         </div>
+          <div class="col-lg-5 p-5 bg-white rounded shadow-sm mb-5 ml-2">
+            <div class="bg-lightpx-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+            <div class="p-4">
+              <p class="font-italic mb-4">There is a 0.1% tax on each item purchased and your overal total is inclusive of your tax. </p>
+              <ul class="list-unstyled mb-4">
+                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal
+                  </strong><strong class="order-sub-total">&#8364;0.00<span></span></strong></li>
+                <li class="d-flex justify-content-between py-3 border-bottom"><strong
+                    class="text-muted">Tax</strong><strong class="tax">&#8364;0.00</strong></li>
+                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                  <h5 class="font-weight-bold total">&#8364;0.00</h5>
+                </li>
+              </ul>
+              <button class="btn btn-dark rounded-pill py-2 btn-block" type="button" data-toggle="modal" data-target="#payModal"><i
+                  class="fa fa-shopping-cart mr-2"></i>Procceed to pay</button>
+                  </div>
+                  </div>
+                  </div>
+          </div>
       </div>
 	   <!-- Payment Form -->
 
-      <div class="row py-5 p-4 bg-white rounded shadow-sm">
-        <div class="col-lg-6">
-          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Payment Method</div>
-          <div class="p-4">
-            <p class="font-italic mb-4">Please enter your details below</p>
-			  <form>
-	     <p>
-	       <label for="the_fName"><span class="question">First Name:</span></label><br>
-	       <input type="text" id="the_fName" name="the_fName" size="50" required autofocus>
-	     </p>
-		 <p>
-		   <label for="the_lName"><span class="question">Last Name:</span></label><br>
-		   <input type="text" id="the_lName" name="the_lName" size="50"></p>
-		<p>
-		   <label for="the_email"><span class="question"> Email Address:</span></label><br>
-           <input type="email" id="the_email" name="the_email" size="50" required></p>
-		 <p>
-		    <label class="question" for="the_DOB">Date of Birth:</label>
-			<input type="date" id="the_DOB" name="the_DOB" placeholder= "dd/mm/yyyy" size="50">
-		 </p>
-		<fieldset>
-		   <legend>Credit card type:</legend>
-		      <p>
-			    <input type="radio" id="visa_card" name="card type" value="visa"><label for="visa_card">
-	            <img src="Images/visa.png" width="50" height="30"></label><br>
-			  </p>
-			  <p>
-			    <input type="radio" id="visa_debit" name="card type" value="visa"><label for="visa_debit">
-	            <img src="Images/visaDebit.png" width="50" height="30"></label><br>
-			  </p>
-			  <p>
-			    <input type="radio" id="masterCard" name="card type" value="visa"><label for="masterCard">
-	            <img src="Images/masterCard.png" width="50" height="30"></label><br>
-			  </p>
-			  <p>
-			    <input type="radio" id="americanExpress" name="card type" value="visa"><label for="americanExpress">
-	            <img src="Images/americanExpress.jfif" width="50" height="40"></label><br>
-			  </p>
-			  <p>
-			    <input type="text" id="cardNumber" name="cardNumber" size="50">
-				 <label for="cardNumber"><span class="question">Credit Card Number</span></label>  
-			  </p>
-			  <p>
-			     <label for="expiryYear"><span class="question">Expiry Year:</span></label>
-				 <input type="number" id="expiryYear" name="expiryYear" min="2021" max="2030" step="1" value="2021">
-			  </p>
-			    <label for="expiryMonth"><span class="question">Expiry Month:</span></label>
-				 <input type="month" id="expiryMonth" name="expiryMonth" min="January" max="December" step="1" placeholder="select month">
-			  <p>
-			  </p>
-		 </fieldset>
-	  </form>		
-            
-          </div>
-          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions for seller</div>
-          <div class="p-4">
-            <p class="font-italic mb-4">If you have some information for the seller you can leave them in the box below</p>
-            <textarea name="" cols="30" rows="2" class="form-control"></textarea>
-          </div>
-		  <div class="input-group mb-4 rounded-pill p-2">
-              <!--<!--<input type="text" placeholder="Enter" aria-describedby="button-addon3" class="form-control border-0">-->
-              <!--<div class="input-group-append border-0">-->
-                <button class="btn btn-dark px-4 rounded-pill" type="button"><i class="fa fa-credit-card-alt mr-2"></i>Enter</button>
-              <!--</div>-->
-            </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
-          <div class="p-4">
-            <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
-            <ul class="list-unstyled mb-4">
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>£140.00</strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>£5.95</strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>£0.00</strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                <h5 class="font-weight-bold">£145.95</h5>
-              </li>
-            </ul>
-			<a class="btn btn-dark rounded-pill py-2 btn-block" type="button" href="login.html"><i class="fa fa-shopping-cart mr-2"></i>Procceed to checkout</a>
-			
-			<!-- Button to open the modal login form 
-			<div class="container">
-                 <button type="button" class="btn btn-dark rounded-pill py-2 btn-block" data-toggle="modal" data-target="#loginModal"><i class="fa fa-shopping-cart mr-2"></i>Procceed to checkout</button>
-             </div>-->
-          </div>
-        </div>
       </div>
 	  
   </div>
 </div>  
-<!--<div class= "container">
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="payModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div>
+        <h2 class="text-center text-success">Congratulations!</h2>
+        <p class="text-center">You have successfully made your payment.</p>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- <div class= "container">
 	  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -386,7 +306,7 @@
   </div>
 </div>  
 	 </div>
-	 </div>-->
+	 </div> -->
 	  
 	  
 	  
@@ -514,6 +434,7 @@ $(document).ready(function() {             $('#loginModal').modal('show');
 	 
      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="Js/cart.js"></script>
 
 </body>
 </html>

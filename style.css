@@ -44,3 +44,8 @@
 .cart {
   margin-top: 0.2rem;
 }
+
+/* Cart.html */
+.empty-data {
+  font-size: 30px;
+}
