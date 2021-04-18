@@ -55,7 +55,7 @@ function calculateTotal(data) {
   total.textContent = overallTotal;
 }
 
-// calculateTotal(data);
+calculateTotal(data);
 
 // Todo
 // 1. Add Proceed to pay button under card display
