@@ -3,7 +3,7 @@
 // 2. if validation is passed,save email and password to local storage
 // 3. Push user to the Homepage
 
-const email = document.querySelector(".email");
+const email = document.querySelector(".username");
 const password = document.querySelector(".password");
 const loginBtn = document.getElementById("signIn");
 
