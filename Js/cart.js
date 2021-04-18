@@ -39,13 +39,15 @@ function getCartItemsFromLocalStorage() {
 function calculateTotal(data) {
   let subTotal = data.reduce((acc, currValue) => {
     let priceInteger = parseInt(currValue.price.slice(1));
-    return acc + priceInteger;
+    let accumulatedPrice = priceInteger * currValue.quantity;
+    return acc + accumulatedPrice;
   }, 0);
   ordersubTotal.textContent = `\u20AC${subTotal}`; //This \u20AC is the JS equivalent for euro symbol
 
   let taxTotal = data.reduce((acc, currValue) => {
     let priceInteger = parseInt(currValue.price.slice(1));
-    return acc + (priceInteger / 100) * 0.1;
+    let accumulatedPrice = priceInteger * currValue.quantity;
+    return acc + (accumulatedPrice / 100) * 0.1;
   }, 0);
   let approximateTaxTotal = taxTotal.toFixed(2);
   tax.textContent = `\u20AC${approximateTaxTotal}`;
@@ -58,10 +60,11 @@ function calculateTotal(data) {
 calculateTotal(data);
 
 // Todo
-// 1. Add Proceed to pay button under card display
 // 2. On click of proceed to pay, Check If user is logged in, if user is logged in, if user is not logged in, push them to log in view.
 // Use session storage to handle the login process
 // 3. Move all css in the html pages to their respective CSS files
+// 4. Handle delete button for cart items
+// 5. Include cart items logic for outdoor plants and pots
 
 //Todo --> Nnnenna
 // 1. Change euro html symbol across the entire app. Use #&#8364; for the symbol
