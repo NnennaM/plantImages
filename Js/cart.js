@@ -69,3 +69,4 @@ calculateTotal(data);
 //Todo --> Nnnenna
 // 1. Change euro html symbol across the entire app. Use #&#8364; for the symbol
 // 2. Wire out the Navbar for other pages using the shop.html navbar
+//3. Replace all footers with the new footer
