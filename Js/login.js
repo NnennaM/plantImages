@@ -1,7 +1,7 @@
 // Todo
 // 1. On click of login, Validate username and password inputs
 // 2. if validation is passed,save username and password to local storage
-// 3. Push user to the Homepage
+// 3. Push user back to the previous route
 
 const username = document.querySelector(".username");
 const password = document.querySelector(".password");
@@ -10,31 +10,45 @@ const errorMsg = document.querySelector(".error-msg");
 let usernameValidText = document.querySelector(".username-valid-text");
 let passwordValidText = document.querySelector(".password-valid-text");
 
-console.log("password", password.value);
-
 function saveToSessionStorage() {
   const passwordValue = password.value;
   const usernameValue = username.value;
-  console.log(usernameValue, passwordValue);
+  let user = {
+    username: usernameValue,
+    password: passwordValue,
+  };
+  sessionStorage.setItem("user", JSON.stringify(user));
+  sessionStorage.setItem("isValidUser", JSON.stringify(true));
 }
 
 function validateLogin(usernameVal, passwordVal) {
-  console.log("password", passwordVal);
+  let isValid = true;
 
   if (
-    (usernameVal !== "user" && usernameVal) ||
-    (passwordVal !== "user" && passwordVal)
+    (usernameVal !== "" && usernameVal !== "user") ||
+    (passwordVal !== "" && passwordVal !== "pass")
   ) {
     errorMsg.textContent = "Your username or password is not correct.";
-  } else if (passwordVal === "") {
-    console.log("empty");
+    isValid = false;
+  } else {
+    errorMsg.textContent = "";
+  }
+  if (usernameVal === "") {
+    usernameValidText.textContent = "Please input your username";
+    errorMsg.textContent = "";
+    isValid = false;
+  } else {
+    usernameValidText.textContent = "";
+  }
+  if (passwordVal === "") {
     passwordValidText.textContent = "Please input your password";
     errorMsg.textContent = "";
-  } else if (passwordVal !== "") {
+    isValid = false;
+  } else {
     passwordValidText.textContent = "";
-  } else if (usernameVal !== "user" || passwordVal !== "user") {
-    errorMsg.textContent = "Your username or password is not correct.";
   }
+
+  return isValid;
 }
 
 loginBtn.addEventListener("click", (e) => {
@@ -42,6 +56,10 @@ loginBtn.addEventListener("click", (e) => {
   const usernameValue = username.value;
 
   e.preventDefault();
-  validateLogin(usernameValue, passwordValue);
-  // saveToSessionStorage();
+  if (validateLogin(usernameValue, passwordValue)) {
+    saveToSessionStorage();
+
+    window.history.back();
+    // window.location.href = "index.html";
+  }
 });

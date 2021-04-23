@@ -38,22 +38,23 @@
 
            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active">
+                     <li class="nav-item">
                          <a class="nav-link" href="index.html">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="shop.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop </a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="shop.html">Shop</a>
+                        <!-- <a class="nav-link dropdown-toggle" href="shop.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                         <a class="dropdown-item" href="shop.html">Plants & Pots</a>
+                         <a class="dropdown-item" href="shop.html">Plants & Pots</a> -->
                          <!--<a class="dropdown-item" href="outdoor.html">Outdoor Plants</a>
                          <a class="dropdown-item" href="pots.html">Decorative Pots</a> -->
-                    </div>
+                    <!-- </div> -->
                      </li>
-                     <li class="nav-item">
+                     <li class="nav-item active">
                          <a class="nav-link" href="plantCare.html">Plant Care</a>
                      </li>
                      <li class="nav-item d-flex flex-column align-items-center justify-content-center">
-                      <a herf="#almostThere" class="cart fa fa-shopping-cart  nav-link"></a>
+                      <a href="cart.html#almostThere"  class="cart fa fa-shopping-cart  nav-link"></a>
                       <span class="cart-badge d-flex justify-content-center mb-2" style="border: 1px solid #000; border-radius: 50px; background-color: #000; color: #fff; height: 25px; width: 25px;">0</span>
                   </li>
                      <li class="nav-item">
@@ -206,23 +207,29 @@
     </footer>
 	 <script language="javascript">
 	     //Slideshow 
+        //  var slideIndex = 0;
+        //  carousel-item();
 
-         var slideIndex = 0;
-         carousel-item();
+        //  function carouselIitem() {
+        //      var i;
+        //      var x = document.getElementsByClassName("carousel-item");
+        //      for (i = 0; i < x.length; i++) {
+        //       x[i].style.display = "none"; 
+        //      }
+        //     slideIndex++;
+        //     if (slideIndex > x.length) {slideIndex = 1} 
+        //      x[slideIndex-1].style.display = "block"; 
+        //     setTimeout(carousel-item, 2000); // Change image every 2 seconds
 
-         function carousel-item() {
-             var i;
-             var x = document.getElementsByClassName("carousel-item");
-             for (i = 0; i < x.length; i++) {
-              x[i].style.display = "none"; 
-             }
-            slideIndex++;
-            if (slideIndex > x.length) {slideIndex = 1} 
-             x[slideIndex-1].style.display = "block"; 
-            setTimeout(carousel-item, 2000); // Change image every 2 seconds
-         }
+            //stored quantity from local storage
+            
+            
+        //  }
 
-	 
+let storedQuantity = JSON.parse(window.localStorage.getItem("numberOfItems"));
+    let cartBadge = document.querySelector(".cart-badge");
+
+    cartBadge.textContent = storedQuantity;	 
 	 </script>
 	
      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

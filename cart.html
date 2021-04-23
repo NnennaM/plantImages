@@ -79,10 +79,6 @@
   padding: 0.3rem 0rem;
 }
 
-
-
-
-
 	 </style>
 </head>
 
@@ -102,22 +98,23 @@
 
            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active">
+                     <li class="nav-item ">
                          <a class="nav-link" href="index.html">Home</a><a href="index.html"></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="shop.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                         <a class="dropdown-item" href="shop.html">Plants & Pots</a>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="shop.html">Shop</a>
+                        <!-- <a class="nav-link dropdown-toggle" href="shop.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
+                         <!-- <a class="dropdown-item" href="shop.html">Plants & Pots</a> -->
                          <!--<a class="dropdown-item" href="outdoor.html">Outdoor Plants</a>
                          <a class="dropdown-item" href="pots.html">Decorative Pots</a> -->
-                    </div>
+                    <!-- </div> -->
                      </li>
                      <li class="nav-item">
                          <a class="nav-link" href="plantCare.html">Plant Care</a>
                      </li>
                      <li class="nav-item d-flex flex-column align-items-center justify-content-center">
-                      <a herf="#almostThere" class="cart fa fa-shopping-cart  nav-link"></a>
+                      <a href="cart.html#almostThere" class="cart fa fa-shopping-cart  nav-link"></a>
                       <span class="cart-badge d-flex justify-content-center mb-2" style="border: 1px solid #000; border-radius: 50px; background-color: #000; color: #fff; height: 25px; width: 25px;">0</span>
                   </li>
                      <li class="nav-item">
@@ -127,6 +124,7 @@
             </div>
           </nav>
 </div>
+</header>
 
      <div class="px-4 px-lg-0">
   <!--  -->
@@ -218,7 +216,7 @@
                   <h5 class="font-weight-bold total">&#8364;0.00</h5>
                 </li>
               </ul>
-              <button class="btn btn-dark rounded-pill py-2 btn-block" type="button" data-toggle="modal" data-target="#payModal"><i
+              <button class="pay-btn btn btn-dark rounded-pill py-2 btn-block" type="button" ><i
                   class="fa fa-shopping-cart mr-2"></i>Procceed to pay</button>
                   </div>
                   </div>
@@ -229,14 +227,13 @@
 
       </div>
 	  
-  </div>
-</div>  
+ 
 
 <!-- Button trigger modal -->
 
 
-<!-- Modal -->
-<div class="modal fade" id="payModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<!--  Modal -->
+<div class="modal fade" id="payModal" tabindex="-1" role="dialog" aria-labelledby="payModal"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -246,137 +243,39 @@
         </button>
       </div>
       <div class="modal-body">
-      <div>
-        <h2 class="text-center text-success">Congratulations!</h2>
-        <p class="text-center">You have successfully made your payment.</p>
-      </div>
+  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
     </div>
   </div>
-</div>
-
-<!-- <div class= "container">
-	  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header border-bottom-0">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-title text-center">
-          <h4>Login</h4>
-        </div>
-        <div class="d-flex flex-column text-center">
-          <form>
-            <div class="form-group">
-              <input type="email" class="form-control" id="email1"placeholder="Your email address..."required>
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control" id="password1" placeholder="Your password..."required>
-            </div>
-            <button type="button" class="btn btn-info btn-block btn-round">Login</button>
-			<div class="container" >
-                <button type="button" onclick="loginModal" class="cancelbtn">Cancel</button>
-               <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-          </form>
-          
-          <div class="text-center text-muted delimiter">or use a social network</div>
-          <div class="d-flex justify-content-center social-buttons">
-            <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
-              <i class="fab fa-twitter"></i>
-            </button>
-            <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
-              <i class="fab fa-facebook"></i>
-            </button>
-            <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
-              <i class="fab fa-linkedin"></i>
-            </button>
-          </di>
-        </div>
-      </div>
-    </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <div class="signup-section">Not a member yet? <a href="#a" class="text-info"> Sign Up</a>.</div>
-      </div>
   </div>
-</div>  
-	 </div>
-	 </div> -->
-	  
-	  
-	  
-	  
-	  <!-- Button to open the modal login form --
-<button onclick="document.getElementById('id01').style.display='block'">Login</button>
-
-<!-- The Modal --
-<div class= "container">
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'"
-   class="close" title="Close Modal">&times;</span>
-
-  <!-- Modal Content--
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <img src="Images/fern1.jpg" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div> 
-</div>-->
-
-
- <br>
- <br>
+  </div>
   
-	    
-	 </header>
+
 	 <!--<footer section-->
-	 <footer>
-    <div class="container-fluid p-0">
-      <div class="row text-left">
-        <div class="col-md-5 col-sm-5">
-          <h4 class="text-muted">About us</h4>
-          <p class="text-muted">Powered by Nnenna Maduekwe</p>
-          <p class="pt-4 text-muted">Student Id | G00388219 ©2021
-            <span> PlantVille</span>
-          </p>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <h4 class="text-muted">Follow Us</h4>
-          <p class="text-muted">Let us be social</p>
-          <div class="column text-muted">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
+    <footer>
+      <div class="container-fluid footer-container py-5 px-5">
+        <div class="row d-flex justify-content-around">
+          <div class="col-md-6 col-sm-6">
+            <h4>About us</h4>
+            <p>Powered by Nnenna Maduekwe</p>
+            <p>Student Id | G00388219 ©2021
+              <span> PlantVille</span>
+            </p>
+          </div>
+          <div class="col-md-6 col-sm-6 float-right">
+            <h4 class="">Follow Us</h4>
+            <p class="">Let us be social</p>
+            <div class="column ">
+              <a target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook-f pr-4 pointer-cursor"></i></a>
+              <a target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram pr-4 pointer-cursor"></i></a>
+              <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter pr-4 pointer-cursor"></i></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  
-     </footer>	 
+    </footer>
 	 <script>
 	     
  //Get the modal

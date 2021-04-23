@@ -3,38 +3,31 @@ let cartBadgeContent = parseInt(cartBadge.textContent);
 let product = document.querySelector(".product-content");
 const cartClickIcons = document.querySelectorAll(".cart-click-icon");
 
-console.log("cartClickIcons", cartClickIcons);
-
 // On load event listener function that is fired
 // as soon as all the page contents is loaded.
 
 window.addEventListener("load", (event) => {
   let numberOfItems = JSON.parse(window.localStorage.getItem("numberOfItems"));
+
+  // set the textContent of the cart to the current number of items in
   if (!numberOfItems) {
     cartBadge.textContent = 0;
   } else {
     cartBadge.textContent = numberOfItems;
   }
-
-  // set the textContent of the cart to the current number of items in
-  // in local storage
 });
 
 // event listener function to get selected plant name,
-// price, afterwhich the incrementCartItems function is
-// called.
-
+// price, afterwhich the incrementCartItems function is called.
 for (let i = 0; i < cartClickIcons.length; i++) {
   cartClickIcons[i].addEventListener("click", (e) => {
     let selectedPlant =
       e.currentTarget.parentElement.parentElement.parentElement.lastElementChild
         .firstElementChild.firstElementChild.textContent;
 
-    console.log("selectedPlant", selectedPlant);
     let selectedPlantPrice =
       e.currentTarget.parentElement.parentElement.parentElement.lastElementChild
         .lastElementChild.textContent;
-    console.log("selectedPlantPrice", selectedPlantPrice);
 
     incrementCartItems(selectedPlant, selectedPlantPrice);
   });
@@ -84,22 +77,6 @@ function storeCartItemsInLocalStorage(plantName, cartItemsObj) {
     (acc, currentValue) => acc + currentValue.quantity,
     0
   );
-
-  console.log(numberOfItems);
-  //     cartItemsArr.forEach((item, index) => {
-  //       console.log("item", item);
-  //       if (item.plantName !== plantName) {
-  //         item.quantity++;
-  //       } else {
-  //         cartItemsArr.push(cartItemsObj);
-  //       }
-  //       //   if (item.plantName !== plantName) {
-  //       //     cartItemsArr.push(cartItemsObj);
-  //       //   }
-  //     });
-  //   } else {
-  //     cartItemsArr.push(cartItemsObj);
-  //   }
 
   // Store cartItemsArr in local storage
   localStorage.setItem("cartItems", JSON.stringify(cartItemsArr));
