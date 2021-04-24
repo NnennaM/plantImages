@@ -1,19 +1,23 @@
+// Query the needed elements from the DOM
 const tbody = document.querySelector(".table tbody");
 const ordersubTotal = document.querySelector(".order-sub-total");
 const tax = document.querySelector(".tax");
-tbody.innerHTML = "";
 const total = document.querySelector(".total");
 const paybtn = document.querySelector(".pay-btn");
 let cartBadge = document.querySelector(".cart-badge");
 let storedQuantity;
+
+// get cart data from local storage.
 let data = getCartItemsFromLocalStorage();
 
-if (!data) {
+if (data.length < 1) {
+  console.log("no data");
   var tr = `<tr class="text-center empty-data"><td></td> <td>You have no items in your cart</td> </tr>`;
 
   tbody.innerHTML += tr;
 } else {
-  tableRow = data.map((item, i) => {
+  data.map((item) => {
+    // loop through the data array to create table row
     var tr = `<tr class="text-center">`;
     tr +=
       `<td>${item.plantName}
@@ -65,7 +69,7 @@ function calculateTotal(data) {
 
 calculateTotal(data);
 
-//  On click of proceed to pay button, Check If user is logged in, if user is logged in, if user is not logged in, push them to log in view.
+//  On click of proceed to pay button, Check If user is logged in, if user is not logged in, push them to log in view.
 paybtn.addEventListener("click", () => {
   let isValidUser = JSON.parse(sessionStorage.getItem("isValidUser"));
 
@@ -88,7 +92,12 @@ paybtn.addEventListener("click", () => {
   }
 });
 
+// event listener to handle when the delete icon is clicked
+// the event was delegated to the tbody element because
+// the delete icon element would not be present in the page
+// at initial page load
 tbody.addEventListener("click", (e) => {
+  console.log(e.target);
   if (e.target.classList.contains("fa-trash")) {
     let plantName =
       e.target.parentElement.previousElementSibling.previousElementSibling
@@ -99,7 +108,11 @@ tbody.addEventListener("click", (e) => {
   }
 });
 
+// function to delete cart item.
 function deleteCartItem(plantName, quantity) {
+  //Filter the stored cartitems data in local storage
+  // and return only the items that are not equal to the plantName
+  // That was clicked
   let filteredData = data.filter((item) => item.plantName !== plantName);
 
   let updatedQuantity = storedQuantity - quantity;
@@ -108,6 +121,7 @@ function deleteCartItem(plantName, quantity) {
 
   localStorage.setItem("numberOfItems", updatedQuantity);
 
+  // refresh the window
   window.location.reload();
 }
 

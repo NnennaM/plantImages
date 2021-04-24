@@ -1,8 +1,4 @@
-// Todo
-// 1. On click of login, Validate username and password inputs
-// 2. if validation is passed,save username and password to local storage
-// 3. Push user back to the previous route
-
+// Query the needed elements from the DOM
 const username = document.querySelector(".username");
 const password = document.querySelector(".password");
 const loginBtn = document.getElementById("signIn");
@@ -10,17 +6,29 @@ const errorMsg = document.querySelector(".error-msg");
 let usernameValidText = document.querySelector(".username-valid-text");
 let passwordValidText = document.querySelector(".password-valid-text");
 
+// Store user details in session storage.
+// Session storage was used to store the user details
+// so as to simulate a typical user login scenario.
+// The user details would be cleared once the browser window
+// is closed.
 function saveToSessionStorage() {
-  const passwordValue = password.value;
-  const usernameValue = username.value;
+  const passwordValue = password.value; // Get the password input value
+  const usernameValue = username.value; // Get the username input value
+
+  // The user object holds the username and password
   let user = {
     username: usernameValue,
     password: passwordValue,
   };
+
+  // Store the user object in session storage.
+  // Also store a boolean variable that identifies if the user is
+  // logged in.
   sessionStorage.setItem("user", JSON.stringify(user));
   sessionStorage.setItem("isValidUser", JSON.stringify(true));
 }
 
+// Login validation function
 function validateLogin(usernameVal, passwordVal) {
   let isValid = true;
 
@@ -51,15 +59,17 @@ function validateLogin(usernameVal, passwordVal) {
   return isValid;
 }
 
+//  On click of login, Validate username and password inputs
+//  if validation is passed,save username and password to local storage
+//  Push user back to the previous route
 loginBtn.addEventListener("click", (e) => {
   const passwordValue = password.value;
   const usernameValue = username.value;
 
-  e.preventDefault();
+  e.preventDefault(); //prevent the default of behaviour of the form
   if (validateLogin(usernameValue, passwordValue)) {
     saveToSessionStorage();
 
     window.history.back();
-    // window.location.href = "index.html";
   }
 });
